@@ -1,0 +1,863 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF67F6E2-0CEA-44C3-8A1C-0850452922D7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DelightDiscount</RootNamespace>
+    <AssemblyName>DelightDiscount</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.1.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined, Version=1.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.12.1\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.2.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AccountsInfo.aspx" />
+    <Content Include="Admin\IncomeWithdrawSheet.aspx" />
+    <Content Include="Admin\LevelWiseList.aspx" />
+    <Content Include="Admin\TransactionApprove.aspx" />
+    <Content Include="Admin\UserList.aspx" />
+    <Content Include="BalanceTransfer.aspx" />
+    <Content Include="Category.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\animate.min.css" />
+    <Content Include="Content\bootstrap-datepicker.css" />
+    <Content Include="Content\bootstrap-datepicker.min.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.css" />
+    <Content Include="Content\bootstrap-datepicker3.min.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\custom.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\MyCss\rejistration.css" />
+    <Content Include="Content\nprogress.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\details.css" />
+    <Content Include="css\fontawesome-stars-o.css" />
+    <Content Include="css\home.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\nav.css" />
+    <Content Include="css\slicebox.css" />
+    <Content Include="css\slick.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="ecommerce\Category.aspx" />
+    <Content Include="ecommerce\css\custom.css" />
+    <Content Include="ecommerce\css\details.css" />
+    <Content Include="ecommerce\css\fontawesome-stars-o.css" />
+    <Content Include="ecommerce\css\home.css" />
+    <Content Include="ecommerce\css\main.css" />
+    <Content Include="ecommerce\css\nav.css" />
+    <Content Include="ecommerce\css\slicebox.css" />
+    <Content Include="ecommerce\css\slick.css" />
+    <Content Include="ecommerce\Default.aspx" />
+    <Content Include="ecommerce\images\amex.png" />
+    <Content Include="ecommerce\images\arrowdown.gif" />
+    <Content Include="ecommerce\images\bangla.png" />
+    <Content Include="ecommerce\images\bkash.png" />
+    <Content Include="ecommerce\images\dbbl.png" />
+    <Content Include="ecommerce\images\dcash.png" />
+    <Content Include="ecommerce\images\left-arrow.png" />
+    <Content Include="ecommerce\images\master.png" />
+    <Content Include="ecommerce\images\mcash.png" />
+    <Content Include="ecommerce\images\mycash.png" />
+    <Content Include="ecommerce\images\nav.png" />
+    <Content Include="ecommerce\images\options.png" />
+    <Content Include="ecommerce\images\qcash.png" />
+    <Content Include="ecommerce\images\right-arrow.png" />
+    <Content Include="ecommerce\images\shadow.png" />
+    <Content Include="ecommerce\images\visa.png" />
+    <Content Include="ecommerce\img\choosing-a-commercial-rea-estate-broker.jpg" />
+    <Content Include="ecommerce\img\cLogo\01.png" />
+    <Content Include="ecommerce\img\cLogo\02.png" />
+    <Content Include="ecommerce\img\cLogo\03.png" />
+    <Content Include="ecommerce\img\cLogo\04.png" />
+    <Content Include="ecommerce\img\cLogo\05.png" />
+    <Content Include="ecommerce\img\cLogo\06.png" />
+    <Content Include="ecommerce\img\cLogo\07.png" />
+    <Content Include="ecommerce\img\cLogo\08.png" />
+    <Content Include="ecommerce\img\cLogo\09.png" />
+    <Content Include="ecommerce\img\cLogo\10.png" />
+    <Content Include="ecommerce\img\cLogo\11.png" />
+    <Content Include="ecommerce\img\cLogo\12.png" />
+    <Content Include="ecommerce\img\cLogo\baderbrau.png" />
+    <Content Include="ecommerce\img\cLogo\Bismillah Hotel And Restuarant.jpg" />
+    <Content Include="ecommerce\img\cLogo\emirates.png" />
+    <Content Include="ecommerce\img\cLogo\fred-perry.png" />
+    <Content Include="ecommerce\img\cLogo\inspiring.png" />
+    <Content Include="ecommerce\img\cLogo\national-geographic.png" />
+    <Content Include="ecommerce\img\cLogo\Robel King Pool, 37A, Donia, Jatrabari.jpg" />
+    <Content Include="ecommerce\img\cLogo\SR Accounting &amp; Maths Zone, Kutubkhali, Jatrabari.png" />
+    <Content Include="ecommerce\img\cLogo\SR Smart Shop, 101, Donia, Jatrabari.png" />
+    <Content Include="ecommerce\img\cLogo\the-snacks-bar-located.jpg" />
+    <Content Include="ecommerce\img\coaching-web.jpg" />
+    <Content Include="ecommerce\img\CommercialIcon.png" />
+    <Content Include="ecommerce\img\logo.png" />
+    <Content Include="ecommerce\img\ss.jpg" />
+    <Content Include="ecommerce\js\cart.js" />
+    <Content Include="ecommerce\js\common.js" />
+    <Content Include="ecommerce\js\jquery.barrating.min.js" />
+    <Content Include="ecommerce\js\jquery.elevatezoom.js" />
+    <Content Include="ecommerce\js\jquery.slicebox.js" />
+    <Content Include="ecommerce\js\modernizr.custom.js" />
+    <Content Include="ecommerce\js\slick.js" />
+    <Content Include="ecommerce\Product.aspx" />
+    <Content Include="ecommerce\ServicePartner.aspx" />
+    <Content Include="ecommerce\ups\Health\Cardy Expart, Price-1550, Deal Code-DD201 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Cardy Expart, Price-1550, Deal Code-DD201.jpg" />
+    <Content Include="ecommerce\ups\Health\Diabetic Control, Price-1190, Deal Code-DD202 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Diabetic Control, Price-1190, Deal Code-DD202.jpg" />
+    <Content Include="ecommerce\ups\Health\Hair Treatment Gold, Price-950, Deal Code-DD203 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Hair Treatment Gold, Price-950, Deal Code-DD203.jpg" />
+    <Content Include="ecommerce\ups\Health\Herbalife Soya Protin,  Price- 600, Deal Code-DD204 %28F%29.jpg" />
+    <Content Include="ecommerce\ups\Health\Herbalife Soya Protin,  Price- 600, Deal Code-DD204 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Max Power-100, Price-1050, Deal Code-DD205 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Max Power-100, Price-1050, Deal Code-DD205.jpg" />
+    <Content Include="ecommerce\ups\Health\Proteino, Price-810, Deal Code-DD206 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Proteino, Price-810, Deal Code-DD206.jpg" />
+    <Content Include="ecommerce\ups\Health\Slim n Fit, Price-1550, Deal Code-DD207 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Slim n Fit, Price-1550, Deal Code-DD207.jpg" />
+    <Content Include="ecommerce\ups\Health\Total Effect, Price-750, Deal Code-DD208 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Total Effect, Price-750, Deal Code-DD208.JPG" />
+    <Content Include="ecommerce\ups\Health\Wait Loss, Price-1500, Deal Code-209 %28V%29.JPG" />
+    <Content Include="ecommerce\ups\Health\Wait Loss, Price-1500, Deal Code-209.JPG" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Dettol Antiseptic Liquid 500ml - Price 140.00 - Code DD012.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Diploma Full Cream Milk Powder 500gm - Price 2850.00 - Code DD013.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Fresh Refined Ssugar 1kg - Price 75.00 - Code DD015.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Fresh Soyabean Oil 5ltr - Price 505.00 - Code DD014.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Ifad Instant Noodles 8pcs - Price 125.00 - Code DD017.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Ispahani Mirzapore Tea 400gm Price 160.00 - Code DD011.jpg" />
+    <Content Include="ecommerce\ups\p\Consumer &amp; Daily Needs\Nestle Nescafe Classic Instant Coffee Jar 100gm - Price - 2800.00 - Code DD016.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Dove Shampoo%28Thailand%29 375ml - Price 270.00 - Code DD021.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Himsagar Oil 350ml - Price175.00 - Code DD022.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Makup Box Price 700.00 - Code DD023.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Mushroom Toothpaste - Price 150.00 - Code DD024.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Neem Face Wash 150ml - Price 1760.00 - Code DD025.jpg" />
+    <Content Include="ecommerce\ups\p\Cosmetic &amp; Beauty Care\Ponds Beauty White 250ml - Price 400.00 - Code DD026.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Charger Light - Price 850.00 - Code DD015.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Chemical Cleaner - Price 3500.00 - Code DD012.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Electric Cettle - Price 450.00 - Code DD011.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Electric Lunch Box - Price 750.00 - Code DD013.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Energy Blub - Price 300.00 - Code DD016.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Iron Mechine - Price 750.00 - Code DD014.jpg" />
+    <Content Include="ecommerce\ups\p\Electric &amp; Electronic\Mobile-Power-Bank 10000mhp - Price 450.00 - Code DD017.jpg" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD111.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD112.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD113.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD114.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD115.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD116.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD117.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD118.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD119.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian AC Cotton, Price- 950, Deal Code-DD120.JPG" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian Dress - Price 1500.00 - Code 042.jpeg" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian Dress - Price 2000.00 - Code 041.jpg" />
+    <Content Include="ecommerce\ups\p\Garments &amp; Fashion\Indian Dress - Price 2500.00 - Code 043.jpg" />
+    <Content Include="ecommerce\ups\p\Gents Gallery\Belt - Price 650.00 - Price 300.00 - Code DD051.jpg" />
+    <Content Include="ecommerce\ups\p\Gents Gallery\Gents Wallet - Price 950.00 - Code DD052.jpg" />
+    <Content Include="ecommerce\ups\p\Gents Gallery\Money Bag - Price 350.00 - Code DD053.jpg" />
+    <Content Include="ecommerce\ups\p\Gents Gallery\Travel Bag - Price 1500.00 - Code DD054.jpg" />
+    <Content Include="ecommerce\ups\p\Health &amp; Nutrition\Chaban Prash - Price 300.00 - Code DD061.jpg" />
+    <Content Include="ecommerce\ups\p\Health &amp; Nutrition\Herbalife 250gr - Price 500.00 - Code DD062.jpg" />
+    <Content Include="ecommerce\ups\p\Health &amp; Nutrition\Kalozira Oil 250ml - Price 400.00 - Code DD063.jpg" />
+    <Content Include="ecommerce\ups\p\Health &amp; Nutrition\Soya Protein - Price 450.00 - Code DD064.jpg" />
+    <Content Include="ecommerce\ups\p\Health &amp; Nutrition\Toxin Cleanser - Price 650.00 - Code DD065.jpg" />
+    <Content Include="ecommerce\ups\r\1.jpg" />
+    <Content Include="ecommerce\ups\r\2.jpg" />
+    <Content Include="ecommerce\ups\r\3.jpg" />
+    <Content Include="ecommerce\ups\Special\Bio Energy Card, Price-650, Deal Coad-501.jpg" />
+    <Content Include="ecommerce\ups\Special\Digital Therapy Mechine, Price-1000, Deal Coad-502.jpg" />
+    <Content Include="ecommerce\ups\Special\Electronic Pest Repellent, Price-950, Deal Coad-503.jpg" />
+    <Content Include="ecommerce\ups\Special\RADIATION-CHIP, Price-690, Deal Coad-504.jpg" />
+    <Content Include="ecommerce\ups\Special\Toxin Cleanser, Price-700, Deal Coad-505.jpg" />
+    <Content Include="ecommerce\ups\Special\Water Purifier, Price-1150, Deal Coad-506.jpg" />
+    <Content Include="ecommerce\ups\s\1.jpg" />
+    <Content Include="ecommerce\ups\s\2.jpg" />
+    <Content Include="ecommerce\ups\s\3.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA - COX-BAZAR - SAINTMARTIN- DHAKA, Price 5500, Deal Code-994.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA - COX-BAZAR - SAINTMARTIN- DHAKA, Price 6250, Deal Code-995.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA - KHAGRACHORI - DHAKA, Price 4900, Deal Code-996.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA - KUAKATA - DHAKA, Price-5000, Deal Code-997.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA - SYLET - DHAKA, Price 2000, Deal Code-998.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA-COX-BAZAR-DHAKA, Price 3150, Deal Code-993.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA-COX-BAZAR-DHAKA, Price 4000, Deal Code-990.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA-COX-BAZAR-DHAKA, Price 4850, Deal Code-992.jpg" />
+    <Content Include="ecommerce\ups\Tour\DHAKA-COX-BAZAR-DHAKA, Price 7500, Deal Code-991.jpg" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontSection\BalanceTransfer.aspx" />
+    <Content Include="FrontSection\css\bootstrap.min.css" />
+    <Content Include="FrontSection\css\font-awesome.css" />
+    <Content Include="FrontSection\Default.aspx" />
+    <Content Include="FrontSection\fonts\fontawesome-webfont.svg" />
+    <Content Include="FrontSection\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrontSection\img\choosing-a-commercial-rea-estate-broker.jpg" />
+    <Content Include="FrontSection\img\cLogo\01.png" />
+    <Content Include="FrontSection\img\cLogo\02.png" />
+    <Content Include="FrontSection\img\cLogo\03.png" />
+    <Content Include="FrontSection\img\cLogo\04.png" />
+    <Content Include="FrontSection\img\cLogo\05.png" />
+    <Content Include="FrontSection\img\cLogo\06.png" />
+    <Content Include="FrontSection\img\cLogo\07.png" />
+    <Content Include="FrontSection\img\cLogo\08.png" />
+    <Content Include="FrontSection\img\cLogo\09.png" />
+    <Content Include="FrontSection\img\cLogo\10.png" />
+    <Content Include="FrontSection\img\cLogo\11.png" />
+    <Content Include="FrontSection\img\cLogo\12.png" />
+    <Content Include="FrontSection\img\cLogo\baderbrau.png" />
+    <Content Include="FrontSection\img\cLogo\emirates.png" />
+    <Content Include="FrontSection\img\cLogo\fred-perry.png" />
+    <Content Include="FrontSection\img\cLogo\inspiring.png" />
+    <Content Include="FrontSection\img\cLogo\national-geographic.png" />
+    <Content Include="FrontSection\img\coaching-web.jpg" />
+    <Content Include="FrontSection\img\ddlogo.png" />
+    <Content Include="FrontSection\img\logo.png" />
+    <Content Include="FrontSection\js\bootstrap.min.js" />
+    <Content Include="FrontSection\js\jquery.min.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Background-4.jpg" />
+    <Content Include="Images\img.jpg" />
+    <Content Include="Images\user.png" />
+    <Content Include="img\choosing-a-commercial-rea-estate-broker.jpg" />
+    <Content Include="img\cLogo\01.png" />
+    <Content Include="img\cLogo\02.png" />
+    <Content Include="img\cLogo\03.png" />
+    <Content Include="img\cLogo\04.png" />
+    <Content Include="img\cLogo\05.png" />
+    <Content Include="img\cLogo\06.png" />
+    <Content Include="img\cLogo\07.png" />
+    <Content Include="img\cLogo\08.png" />
+    <Content Include="img\cLogo\09.png" />
+    <Content Include="img\cLogo\10.png" />
+    <Content Include="img\cLogo\11.png" />
+    <Content Include="img\cLogo\12.png" />
+    <Content Include="img\cLogo\baderbrau.png" />
+    <Content Include="img\cLogo\emirates.png" />
+    <Content Include="img\cLogo\fred-perry.png" />
+    <Content Include="img\cLogo\inspiring.png" />
+    <Content Include="img\cLogo\national-geographic.png" />
+    <Content Include="img\coaching-web.jpg" />
+    <Content Include="img\CommercialIcon.png" />
+    <Content Include="img\ddlogo.png" />
+    <Content Include="img\logo - Copy.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\ss.jpg" />
+    <Content Include="js\cart.js" />
+    <Content Include="js\common.js" />
+    <Content Include="js\jquery.barrating.min.js" />
+    <Content Include="js\jquery.elevatezoom.js" />
+    <Content Include="js\jquery.slicebox.js" />
+    <Content Include="js\modernizr.custom.js" />
+    <Content Include="js\slick.js" />
+    <Content Include="LogIn.aspx" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap-datepicker.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\jquery-2.2.3.min.js" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker3.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Content\bootstrap-datepicker.min.css.map" />
+    <Content Include="Content\bootstrap-datepicker.css.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nb.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Scripts\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Scripts\MyScripts\registration.js" />
+    <Content Include="SPDhaka.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="Product.aspx" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\custom.min.js" />
+    <Content Include="Scripts\fastclick.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\nprogress.js" />
+    <Content Include="Admin\LoginUI.aspx" />
+    <Content Include="Admin\RegistrationUI.aspx" />
+    <Content Include="Admin\ShopEntry.aspx" />
+    <Content Include="SPJoypurhat.aspx" />
+    <Content Include="UpdateProfile.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="FrontSection\fonts\archivoblack-webfont.woff" />
+    <Content Include="FrontSection\fonts\archivoblack-webfont.woff2" />
+    <Content Include="FrontSection\fonts\fontawesome-webfont.eot" />
+    <Content Include="FrontSection\fonts\fontawesome-webfont.ttf" />
+    <Content Include="FrontSection\fonts\fontawesome-webfont.woff" />
+    <Content Include="FrontSection\fonts\fontawesome-webfont.woff2" />
+    <Content Include="FrontSection\fonts\FontAwesome.otf" />
+    <Content Include="FrontSection\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="FrontSection\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="FrontSection\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="FrontSection\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="FrontSection\fonts\icomoon.ttf" />
+    <Content Include="FrontSection\fonts\icomoon.woff" />
+    <Content Include="FrontSection\fonts\MinionPro-Regular .ttf" />
+    <Content Include="FrontSection\fonts\MinionPro-Regular.eot" />
+    <Content Include="FrontSection\fonts\MinionPro-Regular.otf" />
+    <Content Include="FrontSection\fonts\MinionPro-Regular.woff" />
+    <Content Include="FrontSection\fonts\MinionPro-Regular.woff2" />
+    <Content Include="FrontSection\fonts\telenor_bold.ttf" />
+    <Content Include="FrontSection\fonts\telenor_bold.woff" />
+    <Content Include="FrontSection\fonts\telenor_bold.woff2" />
+    <Content Include="FrontSection\fonts\telenor_light.ttf" />
+    <Content Include="FrontSection\fonts\telenor_light.woff" />
+    <Content Include="FrontSection\fonts\telenor_light.woff2" />
+    <Content Include="FrontSection\fonts\telenor_regular.ttf" />
+    <Content Include="FrontSection\fonts\telenor_regular.woff" />
+    <Content Include="FrontSection\fonts\telenor_regular.woff2" />
+    <EntityDeploy Include="DDDBContex.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DDDBContex.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DDDBContex.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DDDBContex.edmx</DependentUpon>
+      <LastGenOutput>DDDBContex.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DDDBContex.edmx.diagram">
+      <DependentUpon>DDDBContex.edmx</DependentUpon>
+    </Content>
+    <Content Include="DDDBContex.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DDDBContex.edmx</DependentUpon>
+      <LastGenOutput>DDDBContex.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\DD.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountsInfo.aspx.cs">
+      <DependentUpon>AccountsInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccountsInfo.aspx.designer.cs">
+      <DependentUpon>AccountsInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IncomeWithdrawSheet.aspx.cs">
+      <DependentUpon>IncomeWithdrawSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IncomeWithdrawSheet.aspx.designer.cs">
+      <DependentUpon>IncomeWithdrawSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LevelWiseList.aspx.cs">
+      <DependentUpon>LevelWiseList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LevelWiseList.aspx.designer.cs">
+      <DependentUpon>LevelWiseList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TransactionApprove.aspx.cs">
+      <DependentUpon>TransactionApprove.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TransactionApprove.aspx.designer.cs">
+      <DependentUpon>TransactionApprove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UserList.aspx.designer.cs">
+      <DependentUpon>UserList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BalanceTransfer.aspx.cs">
+      <DependentUpon>BalanceTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BalanceTransfer.aspx.designer.cs">
+      <DependentUpon>BalanceTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DDDBContex.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DDDBContex.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DDDBContex.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DDDBContex.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DDDBContex.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontSection\BalanceTransfer.aspx.cs">
+      <DependentUpon>BalanceTransfer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontSection\BalanceTransfer.aspx.designer.cs">
+      <DependentUpon>BalanceTransfer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce\Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce\Category.aspx.designer.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce\Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce\Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ecommerce\ServicePartner.aspx.cs">
+      <DependentUpon>ServicePartner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ecommerce\ServicePartner.aspx.designer.cs">
+      <DependentUpon>ServicePartner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrontSection\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrontSection\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="LogIn.aspx.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogIn.aspx.designer.cs">
+      <DependentUpon>LogIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SPDhaka.aspx.cs">
+      <DependentUpon>SPDhaka.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPDhaka.aspx.designer.cs">
+      <DependentUpon>SPDhaka.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.aspx.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Product.aspx.designer.cs">
+      <DependentUpon>Product.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SPJoypurhat.aspx.cs">
+      <DependentUpon>SPJoypurhat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SPJoypurhat.aspx.designer.cs">
+      <DependentUpon>SPJoypurhat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\LoginUI.aspx.cs">
+      <DependentUpon>LoginUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\LoginUI.aspx.designer.cs">
+      <DependentUpon>LoginUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegistrationUI.aspx.cs">
+      <DependentUpon>RegistrationUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegistrationUI.aspx.designer.cs">
+      <DependentUpon>RegistrationUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ShopEntry.aspx.cs">
+      <DependentUpon>ShopEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ShopEntry.aspx.designer.cs">
+      <DependentUpon>ShopEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_AutoTransferId.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_BalanceTransferHistory.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_LevelCount.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_LevelIncomePaid.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_Operator.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ShopInfo.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_ShopLocation.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_TransactionType.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserAccount.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserInfo.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserLevel.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_UserSpotTrack.cs">
+      <DependentUpon>DDDBContex.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Account\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="ecommerce\ups\p\Electric &amp; Electroni\" />
+    <Folder Include="ecommerce\ups\p\Health &amp; Nutritio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50551</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50551/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
